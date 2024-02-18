@@ -1,0 +1,94 @@
+<html>
+<head>
+    <style>
+        html, body {
+            width: 100%;
+            margin: 0 auto;
+        }
+        body, button {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #board button {
+            font-family: arial;
+        }
+        h1 {
+            margin: 5px;
+        }
+        main {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #board button {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            text-align: center; 
+            vertical-align: middle;
+            font-size: 70px;
+        }
+
+        #controls {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 10px;
+            font-size: 1.2em;
+            min-width: 300px;
+        }
+        #controls button {
+            margin: 3px;
+            font-size: 1.2em;
+        }
+
+        #scoreBoardContainer {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            border: 1px dotted black;
+            padding: 5px;
+        }
+        #scoreBoard {
+            display: flex;
+            flex-direction: row;
+        }
+        #scoreBoard div {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <h1>TicTacToe</h1>
+
+        <div id="board"></div>
+        
+        <div id="controls">
+            <div id="robotControls">
+                <span>O: </span><button id="oIsHuman">Human</button><br>
+                <span>X: </span><button id="xIsHuman">Human</button>
+            </div>
+            <div>
+                <button id="newGame">New Game</button>
+            </div>
+        </div>
+
+        <div id="scoreBoardContainer">
+            <div>ScoreBoard</div>
+            <div id="scoreBoard">
+                <div id="xScore"></div>
+                <div id="oScore"></div>
+                <div id="catScore"></div>
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
