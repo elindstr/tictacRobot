@@ -77,12 +77,14 @@ function selectCell(boardIndex) {
             if (winner === -1) xScore+=1
             if (winner === 1) oScore+=1
             updateScoreBoard()
+            displayWin(winner)
         
         // check if board is full
         } else if (!board.includes(0)) {
             gameOver = true
             catScore+=1
             updateScoreBoard()
+            displayWin(0)
 
         } else {
             // change turns
@@ -95,6 +97,9 @@ function selectCell(boardIndex) {
             }
         }
     }
+    
+    // debugging
+    console.log(board)
 }
 
 function isWin(boardToCheck) {
@@ -123,6 +128,27 @@ function updateScoreBoard(){
     $("#xScore").text(`X: ${xScore}`)
     $("#oScore").text(`O: ${oScore}`)
     $("#catScore").text(`Cat: ${catScore}`)
+}
+function displayWin(winner) {
+    if (winner === 0) {
+        $("#catScore").css("background-color", "rgb(250, 79, 79)");
+        setTimeout(function() {
+            $("#catScore").css("background-color", "white");
+        }, 2000)
+    }
+    if (winner === -1) {
+        $("#xScore").css("background-color", "rgb(250, 79, 79)");
+        setTimeout(function() {
+            $("#xScore").css("background-color", "white");
+        }, 3000)
+    }
+    if (winner === 1) {
+        $("#oScore").css("background-color", "rgb(250, 79, 79)");
+        setTimeout(function() {
+            $("#oScore").css("background-color", "white");
+        }, 3000)
+    }
+
 }
 
 // robot buttons
