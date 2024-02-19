@@ -30,7 +30,10 @@ main {
     justify-content: center;
     font-size: 70px;
     padding: 0;
-    margin: 0;
+    margin: 1px;
+}
+.row {
+    display: inline-block;
 }
 
 #controls {
