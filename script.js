@@ -182,9 +182,10 @@ function getRobotMove () {
     console.log("go robot")
 
     // get potential moves
-    potentialMoves = board.flatMap((cell, index) => cell === 0 ? index : []);
-    console.log(potentialMoves)
-
+    let potentialMoves = []
+    for (i of board) {
+        if (i === 0) {potentialMoves.push(i)}
+    } 
     robotMove = lookAheadOne(potentialMoves)
  
     // select with humanish delay
@@ -193,7 +194,7 @@ function getRobotMove () {
     }, 200);
 }
 
-// stupid robot (completely random)
+// stupid robot: completely random
 function stupidBot(potentialMoves) {
     randomIndex = Math.floor(Math.random() * (potentialMoves.length)) + 0;
     robotMove = potentialMoves[randomIndex]
@@ -201,7 +202,7 @@ function stupidBot(potentialMoves) {
     return robotMove
 }
 
-// look ahead one
+// medium robot: look ahead one
 function lookAheadOne(potentialMoves) {
 
     // if win, take (and early return)
@@ -212,6 +213,8 @@ function lookAheadOne(potentialMoves) {
         let winner = isWin(boardToCheck);
         if (winner === turn) {
             console.log("playing win", i)
+            console.log(potentialMoves)
+            console.log(board)
             return i
         }
     }
@@ -224,6 +227,8 @@ function lookAheadOne(potentialMoves) {
         let winner = isWin(boardToCheck);
         if (winner === turn * -1) {
             console.log("playing to avoid loss", i)
+            console.log(potentialMoves)
+            console.log(board)
             return i
         }
     }

@@ -23,7 +23,6 @@ main {
     width: 100px;
     height: 100px;
     line-height: 100px;
-    display: flex;
     text-align: center; 
     vertical-align: middle;
     align-items: center;
@@ -31,9 +30,6 @@ main {
     font-size: 70px;
     padding: 0;
     margin: 1px;
-}
-.row {
-    display: inline-block;
 }
 
 #controls {
