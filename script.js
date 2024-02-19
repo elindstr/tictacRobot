@@ -193,7 +193,7 @@ function getRobotMove () {
     // select with humanish delay
     setTimeout(function() {
         selectCell(robotMove);
-    }, 200);
+    }, 80);
 }
 
 // stupid robot: completely random
