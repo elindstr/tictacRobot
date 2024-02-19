@@ -30,6 +30,7 @@ main {
     font-size: 70px;
     padding: 0;
     margin: 1px;
+    -webkit-appearance: none;
 }
 
 #controls {
