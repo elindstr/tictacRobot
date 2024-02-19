@@ -20,17 +20,20 @@ main {
     align-items: center;
 }
 #board button {
-    width: 90px;
-    height: 90px;
-    line-height: 90px;
+    width: 31vw;
+    height: 31vw;
+    width: 100px;
+    height: 100px;
+    font-size: 80px;
     text-align: center; 
     vertical-align: middle;
     align-items: center;
     justify-content: center;
-    font-size: 70px;
     padding: 0;
     margin: 1px;
     -webkit-appearance: none;
+    border: 0;
+    border-radius: 10px;
 }
 
 #controls {
