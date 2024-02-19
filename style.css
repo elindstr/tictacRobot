@@ -22,8 +22,8 @@ main {
 #board button {
     width: 31vw;
     height: 31vw;
-    width: 100px;
-    height: 100px;
+    max-width: 110px;
+    max-height: 110px;
     font-size: 80px;
     text-align: center; 
     vertical-align: middle;
