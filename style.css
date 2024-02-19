@@ -22,10 +22,15 @@ main {
 #board button {
     width: 100px;
     height: 100px;
-    display: inline-block;
+    line-height: 100px;
+    display: flex;
     text-align: center; 
     vertical-align: middle;
+    align-items: center;
+    justify-content: center;
     font-size: 70px;
+    padding: 0;
+    margin: 0;
 }
 
 #controls {
