@@ -99,7 +99,7 @@ function selectCell(boardIndex) {
     }
 
     // debugging
-    console.log(board)
+    // console.log(board)
 }
 
 function isWin(boardToCheck) {
@@ -114,11 +114,15 @@ function isWin(boardToCheck) {
         [0, 4, 8],
         [2, 4, 6]
     ]
-    for (line of winningLines) {
-        if (boardToCheck[line[0]] === boardToCheck[line[1]] && boardToCheck[line[1]] === boardToCheck[line[2]]) {
+    for (let line of winningLines) {
+        if (boardToCheck[line[0]] === boardToCheck[line[1]] && 
+            boardToCheck[line[1]] === boardToCheck[line[2]] && 
+            boardToCheck[line[0]] !== 0) {
             winner = boardToCheck[line[0]]
+            break
         }
     }
+    // console.log(winner, boardToCheck)
     return winner
 }
 
@@ -183,9 +187,9 @@ function getRobotMove () {
 
     // get potential moves
     let potentialMoves = []
-    for (let index = 0; index < board.length; index++) {
-        if (board[index] === 0) {
-            potentialMoves.push(index);
+    for (let i = 0; i < board.length; i++) {
+        if (board[i] === 0) {
+            potentialMoves.push(i);
         }
     }
     robotMove = lookAheadOne(potentialMoves)
@@ -214,9 +218,9 @@ function lookAheadOne(potentialMoves) {
         boardToCheck[i] = turn
         let winner = isWin(boardToCheck);
         if (winner === turn) {
-            console.log("playing win", i)
-            console.log(potentialMoves)
-            console.log(board)
+            // console.log("playing win", i)
+            // console.log(potentialMoves)
+            // console.log(board)
             return i
         }
     }
@@ -228,9 +232,9 @@ function lookAheadOne(potentialMoves) {
         boardToCheck[i] = turn * -1
         let winner = isWin(boardToCheck);
         if (winner === turn * -1) {
-            console.log("playing to avoid loss", i)
-            console.log(potentialMoves)
-            console.log(board)
+            // console.log("playing to avoid loss", i)
+            // console.log(potentialMoves)
+            // console.log(board)
             return i
         }
     }
@@ -238,6 +242,8 @@ function lookAheadOne(potentialMoves) {
     // else, random
     randomIndex = Math.floor(Math.random() * (potentialMoves.length)) + 0;
     robotMove = potentialMoves[randomIndex]
-    console.log("playing random", robotMove)
+    // console.log("playing random", robotMove)
+    // console.log(potentialMoves)
+    // console.log(board)
     return robotMove
 }
