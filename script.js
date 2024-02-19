@@ -97,7 +97,7 @@ function selectCell(boardIndex) {
             }
         }
     }
-    
+
     // debugging
     console.log(board)
 }
@@ -187,8 +187,10 @@ function getRobotMove () {
 
     robotMove = lookAheadOne(potentialMoves)
  
-    // select
-    selectCell(robotMove)
+    // select with humanish delay
+    setTimeout(function() {
+        selectCell(robotMove);
+    }, 200);
 }
 
 // stupid robot (completely random)
