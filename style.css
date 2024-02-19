@@ -20,8 +20,10 @@ main {
     align-items: center;
 }
 #board button {
-    width: 90px;
-    height: 90px;
+    width: 30vw;
+    height: 30vw;
+    max-width: 100px;
+    max-height: 100px;
     line-height: 90px;
     text-align: center; 
     vertical-align: middle;
