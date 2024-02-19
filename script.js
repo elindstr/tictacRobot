@@ -183,9 +183,11 @@ function getRobotMove () {
 
     // get potential moves
     let potentialMoves = []
-    for (i of board) {
-        if (i === 0) {potentialMoves.push(i)}
-    } 
+    for (let index = 0; index < board.length; index++) {
+        if (board[index] === 0) {
+            potentialMoves.push(index);
+        }
+    }
     robotMove = lookAheadOne(potentialMoves)
  
     // select with humanish delay
